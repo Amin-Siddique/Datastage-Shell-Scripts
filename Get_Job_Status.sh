@@ -24,22 +24,22 @@ cd  `cat /.dshome`
 . ./dsenv > /dev/null 2>&1
 cd $DSHOME/bin
  
-
+########################## Uncomment below code to get all jobs in each project
 #Get projects
-dsjob -lprojects > $Project
+#dsjob -lprojects > $Project
 
 #Divide projects with respective jobs
-Get Jobs in the project
-for i in `cat $Project`;
-do	
-dsjob -ljobs ${i}  >> $Jobs$i
-done 
-
+#Get Jobs in the project-wise
+#for i in `cat $Project`;
+#do	
+#dsjob -ljobs ${i}  >> $Jobs$i
+#done 
+#########################
 
 #Get Job report 
-for i in `cat $filename`;
+for i in `cat $filename`
 do
-${VarDSHome}/bin/dsjob -report ${Project} ${i} >> $Status$i
+${VarDSHome}/bin/dsjob -report DW_PRD ${i} >> $Status$i
 done
 
 
