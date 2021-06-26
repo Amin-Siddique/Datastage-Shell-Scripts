@@ -36,7 +36,7 @@ cd $DSHOME/bin
 #done 
 #########################
 
-#Get Job report 
+#Get Job report for a specific project
 for i in `cat $filename`
 do
 ${VarDSHome}/bin/dsjob -report DW_PRD ${i} >> $Status$i
